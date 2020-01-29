@@ -1,0 +1,16 @@
+let ball = game.createSprite(2, 2)
+input.onButtonPressed(Button.A, function () {
+    ball.turn(Direction.Right, 45)
+})
+
+input.onButtonPressed(Button.B, function () {
+    ball.setX(Math.randomRange(0, 4))
+
+    ball.setY(Math.randomRange(0, 4))
+})
+basic.forever(function () {
+    ball.move(1)
+    basic.pause(100)
+    ball.ifOnEdgeBounce()
+
+})
